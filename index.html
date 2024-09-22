@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Equity Journal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Equity Journal</h1>
+
+        <!-- File Upload Section -->
+        <input type="file" id="csvFileInput" accept=".csv" onchange="loadCSVFile(event)">
+        
+        <div class="form-container">
+            <input type="text" id="stockName" placeholder="Stock Name" required>
+            <input type="number" id="entryPrice" placeholder="Entry Price" required>
+            <input type="number" id="targetPrice" placeholder="Target Price" required>
+            <input type="number" id="stopLossPrice" placeholder="Stop Loss Price" required>
+            <input type="text" id="duration" placeholder="Duration" required>
+            <button id="addTradeBtn" onclick="addTrade()">Add Trade</button>
+            <button id="saveCsvBtn" onclick="saveAsCsv()">Save to CSV</button>
+        </div>
+        
+        <table id="journalTable">
+            <thead>
+                <tr>
+                    <th>Stock Name</th>
+                    <th>Entry Price</th>
+                    <th>Target Price</th>
+                    <th>Stop Loss</th>
+                    <th>Duration</th>
+                    <th>Target/Stop</th>
+                    <th>Percentage Move</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="journalBody">
+                <!-- Trades will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
